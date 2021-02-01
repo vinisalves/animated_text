@@ -38,7 +38,7 @@
 
     text-shadow: 0 0 5px #61ff06;
 
-    animation: text-overflow 2s alternate linear 1s infinite,
+    animation: text-overflow 2s alternate ease-in-out 1s infinite,
     switch-box-shadow 1s ease-in-out 2.3s alternate infinite;
     
 
@@ -46,28 +46,38 @@
 }
 
 @keyframes text-overflow {
-    0%{
+   0%{
         width: 0%;
     }
-    70%,90%, 100% {
+    20%{
+        width: 20%;
+    }
+
+    40%{
+        width: 40%;
+    }
+    60%{
         width: 100%;
+    }
+    100% {
+        width: 0;
     }
 }
 @keyframes switch-border {
-    0%{
+    from {
         border-right: none;
     }
-    100% {
+    to {
         border-right: 10px solid #61ff06;
     }
 }
 
 @keyframes switch-box-shadow {
-    0%{
+    from{
         text-shadow: 0 0 5px  #61ff06;
     }
    
-    100% {
+    to{
         text-shadow: 0 0 5px  #61ff06, 0 0 50px ;
     }
    
